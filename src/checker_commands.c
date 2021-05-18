@@ -6,7 +6,7 @@
 /*   By: lyie <lyie@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/05 17:48:39 by lyie              #+#    #+#             */
-/*   Updated: 2021/05/11 22:08:32 by lyie             ###   ########.fr       */
+/*   Updated: 2021/05/18 15:56:25 by lyie             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_reverse(t_list **stack_x)
 {
-	t_node *current;
-	t_node *last;
+	t_node	*current;
+	t_node	*last;
 
 	if (!(*stack_x)->head)
 		return ;
@@ -31,7 +31,7 @@ void	ft_reverse(t_list **stack_x)
 
 void	ft_rotate(t_list **stack_x)
 {
-	t_node *temp;
+	t_node	*temp;
 
 	if (!(*stack_x)->head)
 		return ;
@@ -41,9 +41,9 @@ void	ft_rotate(t_list **stack_x)
 	ft_lstadd_back((*stack_x), temp);
 }
 
-int		ft_swap(t_list **stack_x)
+int	ft_swap(t_list **stack_x)
 {
-	t_node *temp;
+	t_node	*temp;
 
 	if ((*stack_x)->head != NULL && (*stack_x)->head->next != NULL)
 	{
@@ -55,9 +55,9 @@ int		ft_swap(t_list **stack_x)
 	return (1);
 }
 
-int		ft_push(t_list **stack_from, t_list **stack_to)
+int	ft_push(t_list **stack_from, t_list **stack_to)
 {
-	t_node *temp;
+	t_node	*temp;
 
 	if ((*stack_from)->head == NULL)
 		return (0);

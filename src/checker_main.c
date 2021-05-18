@@ -6,24 +6,23 @@
 /*   By: lyie <lyie@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/05 11:12:30 by lyie              #+#    #+#             */
-/*   Updated: 2021/05/13 16:50:16 by lyie             ###   ########.fr       */
+/*   Updated: 2021/05/18 15:58:10 by lyie             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 #include "../includes/get_next_line.h"
 #include <unistd.h>
-#include <unistd.h>
 #include <fcntl.h>
 #include <stdlib.h>
-#include <stdio.h>
 
 static int	ft_instruct(t_list *stack_a)
 {
 	char	*str;
 	t_list	*stack_b;
 
-	if (!(stack_b = malloc(sizeof(t_list))))
+	stack_b = malloc(sizeof(t_list));
+	if (!stack_b)
 		return (-2);
 	stack_b->head = NULL;
 	while (get_next_line(0, &str))
@@ -47,7 +46,8 @@ static int	ft_checker(int argc, char **argv, t_list **head)
 	int		result;
 	t_node	*node;
 
-	if (!((*head) = malloc(sizeof(t_list))))
+	(*head) = malloc(sizeof(t_list));
+	if (!(*head))
 		exit(-1);
 	(*head)->head = NULL;
 	result = 0;
@@ -68,7 +68,7 @@ static int	ft_checker(int argc, char **argv, t_list **head)
 	return (1);
 }
 
-int			main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_list	*head;
 	int		error;

@@ -6,19 +6,18 @@
 /*   By: lyie <lyie@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/05 11:03:49 by lyie              #+#    #+#             */
-/*   Updated: 2021/05/13 09:05:21 by lyie             ###   ########.fr       */
+/*   Updated: 2021/05/18 16:42:44 by lyie             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 #include "../includes/get_next_line.h"
 #include <unistd.h>
-#include <stdio.h>
 
 int	ft_checksort(t_list *stack)
 {
-	t_node *ptr2;
-	t_node *ptr1;
+	t_node	*ptr2;
+	t_node	*ptr1;
 
 	ptr1 = stack->head;
 	while (ptr1->next)
@@ -113,7 +112,7 @@ int	ft_replicas(t_list *head)
 
 int	ft_isnumber(char *arg)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (arg[i])

@@ -6,7 +6,7 @@
 /*   By: lyie <lyie@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 20:29:22 by lyie              #+#    #+#             */
-/*   Updated: 2021/05/18 11:33:51 by lyie             ###   ########.fr       */
+/*   Updated: 2021/05/18 15:54:00 by lyie             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,17 @@ t_list	*ft_get_sorted_ref(t_list *stack_a, t_list *stack_b)
 {
 	t_list	*copy;
 	t_list	*sorted;
-	t_node	*temp;
 	t_node	*new;
 	int		lowest;
 
 	new = NULL;
-	temp = stack_a->head;
-	if (!temp)
-		return (NULL);
-	if (!(copy = malloc(sizeof(t_list))))
+	copy = malloc(sizeof(t_list));
+	if (!copy)
 		free_stacks_exit(stack_a, stack_b);
 	copy->head = NULL;
 	ft_lstcopy(stack_a, copy);
-	if (!(sorted = malloc(sizeof(t_list))))
+	sorted = malloc(sizeof(t_list));
+	if (!sorted)
 		free_three_exit(stack_a, stack_b, copy);
 	sorted->head = NULL;
 	while (ft_lstsize(copy) != 0)
@@ -42,7 +40,7 @@ t_list	*ft_get_sorted_ref(t_list *stack_a, t_list *stack_b)
 	return (sorted);
 }
 
-int		ft_get_list_val(t_list *list, int here)
+int	ft_get_list_val(t_list *list, int here)
 {
 	int		i;
 	t_node	*temp;
@@ -61,12 +59,13 @@ int		ft_get_list_val(t_list *list, int here)
 	return (temp->no);
 }
 
-int		ft_buildchunk(t_list **sorted, int till, t_list **chunk)
+int	ft_buildchunk(t_list **sorted, int till, t_list **chunk)
 {
-	t_node *temp;
-	t_node *new;
+	t_node	*temp;
+	t_node	*new;
 
-	if (!((*chunk) = malloc(sizeof(t_list))))
+	(*chunk) = malloc(sizeof(t_list));
+	if (!(*chunk))
 		return (-1);
 	(*chunk)->head = NULL;
 	temp = (*sorted)->head;
@@ -82,7 +81,7 @@ int		ft_buildchunk(t_list **sorted, int till, t_list **chunk)
 	return (0);
 }
 
-int		ft_topsearch(t_list **a, t_list *chunk, int *val)
+int	ft_topsearch(t_list **a, t_list *chunk, int *val)
 {
 	t_node	*temp;
 	int		count;
@@ -104,7 +103,7 @@ int		ft_topsearch(t_list **a, t_list *chunk, int *val)
 
 void	ft_del_node_at(t_list **chunk, int val)
 {
-	t_node *temp;
+	t_node	*temp;
 
 	temp = (*chunk)->head;
 	if (temp->no == val)

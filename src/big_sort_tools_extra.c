@@ -6,7 +6,7 @@
 /*   By: lyie <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/10 11:12:01 by lyie              #+#    #+#             */
-/*   Updated: 2021/05/18 11:52:39 by lyie             ###   ########.fr       */
+/*   Updated: 2021/05/18 15:54:43 by lyie             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int	ft_position_counter(t_list **list, int no)
 
 void	ft_bot_pop(t_list **a, t_list **b, int count)
 {
-	int i;
+	int	i;
 
 	i = -1;
 	while (++i < count)
@@ -60,7 +60,7 @@ void	ft_bot_pop(t_list **a, t_list **b, int count)
 
 void	ft_top_pop(t_list **a, t_list **b, int count)
 {
-	int i;
+	int	i;
 
 	i = -1;
 	while (++i < count)

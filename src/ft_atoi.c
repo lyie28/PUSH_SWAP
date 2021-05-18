@@ -6,7 +6,7 @@
 /*   By: lyie <lyie@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 15:55:29 by lyie              #+#    #+#             */
-/*   Updated: 2021/05/11 22:10:38 by lyie             ###   ########.fr       */
+/*   Updated: 2021/05/18 15:59:02 by lyie             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static int	ft_checksize(int result, int i, char *str, int sign)
 	return (0);
 }
 
-int			ft_atoi(const char *str, int *result)
+int	ft_atoi(const char *str, int *result)
 {
 	int				i;
 	int				sign;

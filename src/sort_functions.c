@@ -6,15 +6,14 @@
 /*   By: lyie <lyie@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/06 10:50:56 by lyie              #+#    #+#             */
-/*   Updated: 2021/05/13 10:06:29 by lyie             ###   ########.fr       */
+/*   Updated: 2021/05/18 16:42:00 by lyie             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 #include <unistd.h>
-#include <stdio.h>
 
-void		ft_sort_three(t_list **stack_a, t_list **stack_b)
+void	ft_sort_three(t_list **stack_a, t_list **stack_b)
 {
 	int	a;
 	int	b;
@@ -59,7 +58,7 @@ static void	ft_after_moves(int count, t_list **a, t_list **b, int size)
 		ft_write_op("ra\n", a, b);
 }
 
-void		ft_putback(t_list **st_a, t_list **st_b)
+void	ft_putback(t_list **st_a, t_list **st_b)
 {
 	t_node	*current_a;
 	t_node	*current_b;
@@ -87,9 +86,9 @@ void		ft_putback(t_list **st_a, t_list **st_b)
 	return ;
 }
 
-void		ft_sort_five(int size, t_list **stack_a, t_list **stack_b)
+void	ft_sort_five(int size, t_list **stack_a, t_list **stack_b)
 {
-	int shift;
+	int	shift;
 	int	i;
 
 	i = -1;
@@ -102,7 +101,7 @@ void		ft_sort_five(int size, t_list **stack_a, t_list **stack_b)
 		ft_putback(stack_a, stack_b);
 }
 
-void		ft_sort_two(int size, t_list **stack_a, t_list **stack_b)
+void	ft_sort_two(int size, t_list **stack_a, t_list **stack_b)
 {
 	int	a;
 	int	b;

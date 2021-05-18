@@ -6,33 +6,16 @@
 /*   By: lyie <lyie@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 09:44:56 by lyie              #+#    #+#             */
-/*   Updated: 2021/05/17 10:47:08 by lyie             ###   ########.fr       */
+/*   Updated: 2021/05/18 16:34:36 by lyie             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 #include <stdlib.h>
-#include <stdio.h>
 
-void		ft_lstprinter(t_list *lst)
+void	ft_del_node(t_node *node)
 {
-	t_node *current;
-
-	if (!lst)
-		return ;
-	if (!lst->head)
-		return ;
-	current = lst->head;
-	while (current)
-	{
-		printf("current node is %i\n", current->no);
-		current = current->next;
-	}
-}
-
-void		ft_del_node(t_node *node)
-{
-	t_node *temp;
+	t_node	*temp;
 
 	temp = node->next;
 	node->next = node->next->next;
@@ -45,9 +28,9 @@ static void	ft_restart(t_node **temp, t_list **list)
 	*temp = (*list)->head;
 }
 
-void		ft_del_vals(t_list *list, t_list *vals)
+void	ft_del_vals(t_list *list, t_list *vals)
 {
-	t_node *temp;
+	t_node	*temp;
 
 	if (!list)
 		return ;
@@ -87,7 +70,7 @@ static int	ft_findlowest_plus(t_node *current, int lowest)
 	return (lowest);
 }
 
-int			ft_findlowest(t_list **list)
+int	ft_findlowest(t_list **list)
 {
 	t_node	*current;
 	int		lowest;

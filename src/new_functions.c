@@ -6,20 +6,19 @@
 /*   By: lyie <lyie@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 10:48:15 by lyie              #+#    #+#             */
-/*   Updated: 2021/05/18 11:43:45 by lyie             ###   ########.fr       */
+/*   Updated: 2021/05/18 16:38:43 by lyie             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-#include <stdio.h>
 
-int		ft_get_index(t_list **b, int size)
+int	ft_get_index(t_list **b)
 {
-	int	i;
-	int	max;
-	int	max_index;
+	int		i;
+	int		max;
+	int		max_index;
 	t_node	*current;
-	(void)size;
+
 	i = 1;
 	if ((*b)->head)
 		max = (*b)->head->no;
@@ -45,13 +44,13 @@ void	ft_sort(t_list **a, t_list **b)
 	int	i;
 	int	max_index;
 	int	count;
-	int 	size;
+	int	size;
 
 	size = ft_lstsize(*b);
 	while (size != 0)
 	{
 		size = ft_lstsize(*b);
-		max_index = ft_get_index(b, size);
+		max_index = ft_get_index(b);
 		if (max_index < size / 2)
 			count = max_index - 1;
 		else

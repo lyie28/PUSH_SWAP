@@ -6,7 +6,7 @@
 /*   By: lyie <lyie@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 22:16:53 by lyie              #+#    #+#             */
-/*   Updated: 2021/05/16 20:37:18 by lyie             ###   ########.fr       */
+/*   Updated: 2021/05/18 16:41:07 by lyie             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ static int	ft_push_checker(int argc, char **argv, t_list **head)
 	int		result;
 	t_node	*node;
 
-	if (!((*head) = malloc(sizeof(t_list))))
+	(*head) = malloc(sizeof(t_list));
+	if (!(*head))
 		exit(-1);
 	(*head)->head = NULL;
 	result = 0;
@@ -42,7 +43,7 @@ static int	ft_push_checker(int argc, char **argv, t_list **head)
 	return (1);
 }
 
-int			ft_sorter(int size, t_list **stack_a, t_list **stack_b)
+int	ft_sorter(int size, t_list **stack_a, t_list **stack_b)
 {
 	if (size <= 3)
 		ft_sort_two(size, stack_a, stack_b);
@@ -55,17 +56,17 @@ int			ft_sorter(int size, t_list **stack_a, t_list **stack_b)
 	return (1);
 }
 
-int			ft_error(t_list **stack_a)
+int	ft_error(t_list **stack_a)
 {
 	write(1, "Error\n", 6);
 	ft_freelist(*stack_a);
 	return (0);
 }
 
-int			main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-	t_list *stack_a;
-	t_list *stack_b;
+	t_list	*stack_a;
+	t_list	*stack_b;
 
 	if (argc == 1)
 		return (0);
@@ -77,7 +78,8 @@ int			main(int argc, char **argv)
 		ft_freelist(stack_a);
 		return (0);
 	}
-	if (!(stack_b = malloc(sizeof(t_list))))
+	stack_b = malloc(sizeof(t_list));
+	if (!(stack_b))
 	{
 		ft_freelist(stack_a);
 		return (-1);

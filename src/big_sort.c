@@ -6,7 +6,7 @@
 /*   By: lyie <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/10 11:12:01 by lyie              #+#    #+#             */
-/*   Updated: 2021/05/18 12:06:05 by lyie             ###   ########.fr       */
+/*   Updated: 2021/05/18 15:45:34 by lyie             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ static int	ft_find_and_move(t_list **a, t_list **b, t_list *chunk)
 	while (ft_lstsize(chunk) > 0)
 	{
 		count.a = ft_topsearch(a, chunk, &count.val);
-		if (!(reverse = malloc(sizeof(t_list))))
+		reverse = malloc(sizeof(t_list));
+		if (!reverse)
 			return (-1);
 		reverse->head = NULL;
 		ft_lstcopy_reverse(*a, reverse);
@@ -33,7 +34,7 @@ static int	ft_find_and_move(t_list **a, t_list **b, t_list *chunk)
 			ft_top_pop(a, b, count.a);
 			count.val2 = count.val;
 		}
-		else 
+		else
 			ft_bot_pop(a, b, count.b);
 		ft_del_node_at(&chunk, count.val2);
 		ft_freelist(reverse);
@@ -41,7 +42,7 @@ static int	ft_find_and_move(t_list **a, t_list **b, t_list *chunk)
 	return (0);
 }
 
-void		ft_sorter_go(t_list **a, t_list **b, t_list *sorted, int divider)
+void	ft_sorter_go(t_list **a, t_list **b, t_list *sorted, int divider)
 {
 	int		till;
 	t_list	*chunk;
@@ -68,7 +69,7 @@ void		ft_sorter_go(t_list **a, t_list **b, t_list *sorted, int divider)
 		ft_write_op("pa\n", a, b);
 }
 
-void		ft_big_sort(int size, t_list **stack_a, t_list **stack_b)
+void	ft_big_sort(int size, t_list **stack_a, t_list **stack_b)
 {
 	t_list	*sorted;
 	int		chunk_size;

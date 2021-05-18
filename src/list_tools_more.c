@@ -6,13 +6,12 @@
 /*   By: lyie <lyie@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 09:44:56 by lyie              #+#    #+#             */
-/*   Updated: 2021/05/11 22:00:00 by lyie             ###   ########.fr       */
+/*   Updated: 2021/05/18 16:36:36 by lyie             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 #include <stdlib.h>
-#include <stdio.h>
 
 void	ft_lstadd_front(t_list *start, t_node *new)
 {
@@ -22,7 +21,7 @@ void	ft_lstadd_front(t_list *start, t_node *new)
 
 void	ft_lstadd_back(t_list *start, t_node *node)
 {
-	t_node *current;
+	t_node	*current;
 
 	if (start->head == NULL)
 	{
@@ -38,9 +37,10 @@ void	ft_lstadd_back(t_list *start, t_node *node)
 
 t_node	*ft_lstnew(int no)
 {
-	t_node *new;
+	t_node	*new;
 
-	if (!(new = malloc(sizeof(t_node))))
+	new = malloc(sizeof(t_node));
+	if (!(new))
 		return (NULL);
 	new->no = no;
 	new->next = NULL;

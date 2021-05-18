@@ -6,7 +6,7 @@
 /*   By: lyie <lyie@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 15:52:16 by lyie              #+#    #+#             */
-/*   Updated: 2021/05/05 14:06:47 by lyie             ###   ########.fr       */
+/*   Updated: 2021/05/18 15:40:29 by lyie             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <stddef.h>
 
-int			get_next_line(int fd, char **line);
+int		get_next_line(int fd, char **line);
 char	*ft_strjoin(char const *s1, char const *s2, int store);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 void	*ft_memmove(void *dst, const void *src, size_t n);
