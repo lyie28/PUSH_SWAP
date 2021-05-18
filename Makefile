@@ -6,7 +6,7 @@
 #    By: lyie <lyie@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/04 17:26:49 by lyie              #+#    #+#              #
-#    Updated: 2021/05/18 12:07:26 by lyie             ###   ########.fr        #
+#    Updated: 2021/05/18 12:24:53 by lyie             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,7 +41,7 @@ CHECK_SRCS			= 	src/checker_main.c \
 PUSH_OBJS			= $(PUSH_SRCS:.c=.o)
 CHECK_OBJS			= $(CHECK_SRCS:.c=.o)
 
-CC				= gcc -D BUFFER_SIZE=1 -g -fsanitize=address
+CC				= gcc -D BUFFER_SIZE=1 -g
 RM				= rm -f
 INCLUDE			= -I./includes/
 CFLAGS			= -Wall -Werror -Wextra
