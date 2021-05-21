@@ -16,4 +16,5 @@ I work with linked lists throughout on this project because I haven’t really h
 4) I find the highest number in stack B, get it back to stack A in the fastest way possible and then repeat the process until stack B is empty and stack A has one sorted list of numbers.
 
 **Ideas to improve results further:**
+
 The chunks are moved from stack A to B in ascending order of numerical value. This means the last chunk is guaranteed to contain numbers with a higher value than previous numbers, so I could simply sort them in stack A, rather than moving them across to stack B and then back to A and then add the values in stack A on top of them. If I have time, I will test the results with this optimisation.
