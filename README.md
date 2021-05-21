@@ -12,8 +12,8 @@ I work with linked lists throughout on this project because I haven’t really h
 
 1) I start by splitting my list of numbers in stack A into “chunks”. I ran some tests to decipher how many chunks were optimal for certain dataset sizes.
 2) Like in the quicksort algorithm, I then take a “pivot” number for this chunk and push everything above it from stack A into stack B (calculating the fastest route, i.e. is it nearer the bottom or top of list). The “pivot” number is not a random number but the median of this set of numbers. After that, I push everything above the pivot to stack B too. It is a kind of pre-sorting method.
-3) I continue doing this until there are no numbers left in stack A and we have set of numbers in stack B which is not entirely sorted, but is beginning to be more in order in stack B. This is now much more optimal for the use of a technique based on insertion sort, which performs well with near-sorted lists.
-4) I find the highest number in stack B, get it back to stack A in the fastest way possible and then repeat the process until stack B is empty and stack A has one sorted list of numbers.
+3) I continue doing this until there are no numbers left in stack A and we have set of numbers in stack B which is not entirely sorted, but is beginning to be more in order in stack B.
+4) I then find the highest number in stack B, get it back to stack A in the fastest way possible and then repeat the process until stack B is empty and stack A has one sorted list of numbers.
 
 **Ideas to improve results further:**
 
